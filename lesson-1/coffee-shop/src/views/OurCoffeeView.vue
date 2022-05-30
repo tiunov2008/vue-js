@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <nav-bar-component/>
+                        <nav-bar-component />
                     </div>
                 </div>
                 <h1 class="title-big">Our Coffee</h1>
@@ -35,7 +35,8 @@
                     <div class="col-lg-4 offset-2">
                         <form action="#" class="shop__search">
                             <label class="shop__search-label" for="filter">Looking for</label>
-                            <input id="filter" type="text" placeholder="start typing here..." class="shop__search-input">
+                            <input id="filter" type="text" placeholder="start typing here..."
+                                class="shop__search-input">
                         </form>
                     </div>
                     <div class="col-lg-4">
@@ -54,12 +55,12 @@
                 <div class="row">
                     <div class="col-lg-10 offset-lg-1">
                         <div class="shop__wrapper">
-                            <card-component/>
-                            <card-component/>
-                            <card-component/>
-                            <card-component/>
-                            <card-component/>
-                            <card-component/>
+                            <card-component />
+                            <card-component />
+                            <card-component />
+                            <card-component />
+                            <card-component />
+                            <card-component />
                         </div>
                     </div>
                 </div>
@@ -71,6 +72,48 @@
 import NavBarComponent from '@/components/NavBarComponent.vue'
 import CardComponent from '@/components/CardComponent.vue'
 export default {
-    components: {NavBarComponent, CardComponent},
+    components: { NavBarComponent, CardComponent },
+    data() {
+        return {
+            hero_cards: [
+                {
+                    id: 0,
+                    img: 'coffee-1.jpg',
+                    text: 'Solimo Coffee Beans 2kg',
+                    price: '10.73$',
+                },
+                {
+                    id: 1,
+                    img: 'coffee-1.jpg',
+                    text: 'Solimo Coffee Beans 2kg',
+                    price: '10.73$',
+                },
+                {
+                    id: 2,
+                    img: 'coffee-1.jpg',
+                    text: 'Solimo Coffee Beans 2kg',
+                    price: '10.73$',
+                },
+                {
+                    id: 3,
+                    img: 'coffee-1.jpg',
+                    text: 'Solimo Coffee Beans 2kg',
+                    price: '10.73$',
+                },
+                {
+                    id: 4,
+                    img: 'coffee-1.jpg',
+                    text: 'Solimo Coffee Beans 2kg',
+                    price: '10.73$',
+                },
+                {
+                    id: 5,
+                    img: 'coffee-1.jpg',
+                    text: 'Solimo Coffee Beans 2kg',
+                    price: '10.73$',
+                },
+            ]
+        }
+    }
 }
 </script>

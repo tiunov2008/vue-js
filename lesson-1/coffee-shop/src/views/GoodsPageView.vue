@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <nav-bar-component/>    
+                        <nav-bar-component />
                     </div>
                 </div>
                 <h1 class="title-big">For your pleasure</h1>
@@ -30,18 +30,18 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="line"></div>
-    
+
                 <div class="row">
                     <div class="col-lg-10 offset-lg-1">
                         <div class="shop__wrapper">
-                            <card-component/>
-                            <card-component/>
-                            <card-component/>
-                            <card-component/>
-                            <card-component/>
-                            <card-component/>
+                            <card-component />
+                            <card-component />
+                            <card-component />
+                            <card-component />
+                            <card-component />
+                            <card-component />
                         </div>
                     </div>
                 </div>
@@ -53,6 +53,48 @@
 import NavBarComponent from '@/components/NavBarComponent.vue'
 import CardComponent from '@/components/CardComponent.vue'
 export default {
-    components: {NavBarComponent, CardComponent},
+    components: { NavBarComponent, CardComponent },
+    data() {
+        return {
+            hero_cards: [
+                {
+                    id: 0,
+                    img: 'coffee-1.jpg',
+                    text: 'Solimo Coffee Beans 2kg',
+                    price: '10.73$',
+                },
+                {
+                    id: 1,
+                    img: 'coffee-1.jpg',
+                    text: 'Solimo Coffee Beans 2kg',
+                    price: '10.73$',
+                },
+                {
+                    id: 2,
+                    img: 'coffee-1.jpg',
+                    text: 'Solimo Coffee Beans 2kg',
+                    price: '10.73$',
+                },
+                {
+                    id: 3,
+                    img: 'coffee-1.jpg',
+                    text: 'Solimo Coffee Beans 2kg',
+                    price: '10.73$',
+                },
+                {
+                    id: 4,
+                    img: 'coffee-1.jpg',
+                    text: 'Solimo Coffee Beans 2kg',
+                    price: '10.73$',
+                },
+                {
+                    id: 5,
+                    img: 'coffee-1.jpg',
+                    text: 'Solimo Coffee Beans 2kg',
+                    price: '10.73$',
+                },
+            ]
+        }
+    }
 }
 </script>

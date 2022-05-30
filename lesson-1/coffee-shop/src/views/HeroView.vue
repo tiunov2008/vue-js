@@ -62,5 +62,29 @@ import NavBarComponent from '@/components/NavBarComponent.vue'
 import CardComponent from '@/components/CardComponent.vue'
 export default {
     components: {NavBarComponent, CardComponent},
+    data() {
+        return {
+            hero_cards: [
+                {
+                    id: 0,
+                    img: 'coffee-1.jpg',
+                    text: 'Solimo Coffee Beans 2kg',
+                    price: '10.73$',
+                },
+                {
+                    id: 1,
+                    img: 'coffee-1.jpg',
+                    text: 'Solimo Coffee Beans 2kg',
+                    price: '10.73$',
+                },
+                {
+                    id: 2,
+                    img: 'coffee-1.jpg',
+                    text: 'Solimo Coffee Beans 2kg',
+                    price: '10.73$',
+                },
+            ]
+        }
+    }
 }
 </script>
