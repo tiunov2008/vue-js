@@ -9,7 +9,9 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-10 offset-lg-1">
-                        <h1 class="title-big">Everything You Love About Coffee</h1>
+                        <header-title-component
+                        title="Everything You Love About Coffee"
+                        />
                         <img class="beanslogo" src="@/assets/logo/Beans_logo.svg" alt="Beans logo">
                         <div class="preview__subtitle">We makes every day full of energy and taste</div>
                         <div class="preview__subtitle">Want to try our beans?</div>
@@ -47,9 +49,24 @@
                 <div class="row">
                     <div class="col-lg-10 offset-lg-1">
                         <div class="best__wrapper">
-                            <card-component/>
-                            <card-component/>
-                            <card-component/>
+                            <card-component
+                            classItem="best__item"
+                            :text="hero_cards[0].text"
+                            :price="hero_cards[0].price"
+                            :img="hero_cards[0].img"
+                            />
+                            <card-component
+                            classItem="best__item"
+                            :text="hero_cards[1].text"
+                            :price="hero_cards[1].price"
+                            :img="hero_cards[1].img"
+                            />
+                            <card-component
+                            classItem="best__item"
+                            :text="hero_cards[2].text"
+                            :price="hero_cards[2].price"
+                            :img="hero_cards[2].img"
+                            />
                         </div>
                     </div>
                 </div>
@@ -60,28 +77,29 @@
 <script>
 import NavBarComponent from '@/components/NavBarComponent.vue'
 import CardComponent from '@/components/CardComponent.vue'
+import HeaderTitleComponent from '@/components/HeaderTitleComponent.vue'
 export default {
-    components: {NavBarComponent, CardComponent},
+    components: {NavBarComponent, CardComponent, HeaderTitleComponent},
     data() {
         return {
             hero_cards: [
                 {
                     id: 0,
                     img: 'coffee-1.jpg',
-                    text: 'Solimo Coffee Beans 2kg',
-                    price: '10.73$',
+                    text: 'Solimo Coffee Beans 1kg',
+                    price: '11.73$',
                 },
                 {
                     id: 1,
-                    img: 'coffee-1.jpg',
+                    img: 'coffee-2.jpg',
                     text: 'Solimo Coffee Beans 2kg',
-                    price: '10.73$',
+                    price: '12.73$',
                 },
                 {
                     id: 2,
-                    img: 'coffee-1.jpg',
-                    text: 'Solimo Coffee Beans 2kg',
-                    price: '10.73$',
+                    img: 'coffee-3.jpg',
+                    text: 'Solimo Coffee Beans 3kg',
+                    price: '13.73$',
                 },
             ]
         }
