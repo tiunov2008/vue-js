@@ -50,22 +50,12 @@
                     <div class="col-lg-10 offset-lg-1">
                         <div class="best__wrapper">
                             <card-component
-                            classItem="best__item"
-                            :text="hero_cards[0].text"
-                            :price="hero_cards[0].price"
-                            :img="hero_cards[0].img"
-                            />
-                            <card-component
-                            classItem="best__item"
-                            :text="hero_cards[1].text"
-                            :price="hero_cards[1].price"
-                            :img="hero_cards[1].img"
-                            />
-                            <card-component
-                            classItem="best__item"
-                            :text="hero_cards[2].text"
-                            :price="hero_cards[2].price"
-                            :img="hero_cards[2].img"
+                                v-for="card in cards"
+                                v-key="card.id"
+                                classItem="best__item"
+                                :text="card.text"
+                                :price="card.price"
+                                :img="card.img"
                             />
                         </div>
                     </div>
@@ -82,7 +72,7 @@ export default {
     components: {NavBarComponent, CardComponent, HeaderTitleComponent},
     data() {
         return {
-            hero_cards: [
+            cards: [
                 {
                     id: 0,
                     img: 'coffee-1.jpg',

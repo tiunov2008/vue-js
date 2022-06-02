@@ -4,29 +4,19 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <ul class="footer d-flex flex-wrap">
-                        <li class="footer__item">
-                            <router-link :to="links[0].link">
-                                <img :src="require(`@/assets/logo/${links[0].icon}`)" alt="logo">
-                            </router-link>
-                        </li>
-                        <li class="footer__item">
                         <link-component
-                            :text="links[1].text"
-                            :link="links[1].link"
-                        />
-                        </li>
-                        <li class="footer__item">
+                            classLink="footer__item"
+                            :link="links.header.link"
+                        >
+                        <img :src="require(`@/assets/logo/${links.header.icon}`)" alt="logo">
+                        </link-component>
                         <link-component
-                            :text="links[2].text"
-                            :link="links[2].link"
+                            v-for="link in links.other"
+                            v-key="link.id"
+                            classLink="footer__item"
+                            :text="link.text"
+                            :link="link.link"
                         />
-                        </li>
-                        <li class="footer__item">
-                        <link-component
-                            :text="links[3].text"
-                            :link="links[3].link"
-                        />
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -41,12 +31,14 @@ export default {
     components: {LinkComponent},
     data() {
         return {
-            links: [
+            links:{
+                header:
                 {
                     id: 0,
                     link: '/',
                     icon: 'Logo_black.svg',
                 },
+                other:[
                 {
                     id: 1,
                     text: 'Our coffee',
@@ -62,7 +54,8 @@ export default {
                     text: 'Contact us',
                     link: '/contacts',
                 },
-            ]
+                ]
+            }
         }
     }
 }

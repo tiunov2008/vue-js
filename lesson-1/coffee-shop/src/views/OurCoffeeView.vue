@@ -58,40 +58,12 @@
                     <div class="col-lg-10 offset-lg-1">
                         <div class="shop__wrapper">
                             <card-component
+                                v-for="card in cards"
+                                v-key="card.id"
                                 classItem="shop__item"
-                                :text="shop_1_cards[0].text"
-                                :price="shop_1_cards[0].price"
-                                :img="shop_1_cards[0].img"
-                            />                            
-                            <card-component
-                                classItem="shop__item"
-                                :text="shop_1_cards[1].text"
-                                :price="shop_1_cards[1].price"
-                                :img="shop_1_cards[1].img"
-                            />                            
-                            <card-component
-                                classItem="shop__item"
-                                :text="shop_1_cards[2].text"
-                                :price="shop_1_cards[2].price"
-                                :img="shop_1_cards[2].img"
-                            />                            
-                            <card-component
-                                classItem="shop__item"
-                                :text="shop_1_cards[3].text"
-                                :price="shop_1_cards[3].price"
-                                :img="shop_1_cards[3].img"
-                            />                     
-                            <card-component
-                                classItem="shop__item"
-                                :text="shop_1_cards[4].text"
-                                :price="shop_1_cards[4].price"
-                                :img="shop_1_cards[4].img"
-                            />                            
-                            <card-component
-                                classItem="shop__item"
-                                :text="shop_1_cards[5].text"
-                                :price="shop_1_cards[5].price"
-                                :img="shop_1_cards[5].img"
+                                :text="card.text"
+                                :price="card.price"
+                                :img="card.img"
                             />
                         </div>
                     </div>
@@ -108,7 +80,7 @@ export default {
     components: { NavBarComponent, CardComponent,HeaderTitleComponent },
     data() {
         return {
-            shop_1_cards: [
+            cards: [
                 {
                     id: 0,
                     img: 'coffee-1.jpg',

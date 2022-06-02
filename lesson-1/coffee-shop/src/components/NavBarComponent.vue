@@ -1,30 +1,19 @@
 <template>
     <header>
         <ul class="header d-flex justify-content-center justify-content-md-start flex-wrap">
-            <li class="header__item">
-                <router-link :to="links[0].link">
-                    <img :src="require(`@/assets/logo/${links[0].icon}`)" alt="logo">
-                </router-link>
-            </li>
-
-            <li class="header__item">
-                <link-component
-                :text="links[1].text"
-                :link="links[1].link"
-                />
-            </li>
-            <li class="header__item">
-                <link-component
-                :text="links[2].text"
-                :link="links[2].link"
-                />
-            </li>
-            <li class="header__item">
-                <link-component
-                :text="links[3].text"
-                :link="links[3].link"
-                />
-            </li>
+            <link-component
+                classLink="header__item"
+                :link="links.header.link"
+            >
+            <img :src="require(`@/assets/logo/${links.header.icon}`)" alt="logo">
+            </link-component>
+            <link-component
+                v-for="link in links.other"
+                v-key="link.id"
+                classLink="header__item"
+                :text="link.text"
+                :link="link.link"
+            />
         </ul>
     </header>
 </template>
@@ -37,12 +26,14 @@ export default {
     components: {LinkComponent},
     data() {
         return {
-            links: [
+            links:{
+                header:
                 {
                     id: 0,
                     link: '/',
                     icon: 'Logo.svg',
                 },
+                other:[
                 {
                     id: 1,
                     text: 'Our coffee',
@@ -58,7 +49,8 @@ export default {
                     text: 'Contact us',
                     link: '/contacts',
                 },
-            ]
+                ]
+            }
         }
     }
 }
