@@ -4,13 +4,13 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-import './assets/scss/style.scss'
-import './filters/index.js'
 Vue.config.productionTip = false
 
-
+import './assets/css/style.css'
+import './assets/css/bootstrap.min.css'
 new Vue({
-  store,
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')
+

@@ -12,7 +12,3 @@ export default {
     components: {HeroView, FooterComponent },
 }
 </script>
-
-<style>
-
-</style>

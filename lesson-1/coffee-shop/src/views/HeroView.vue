@@ -53,9 +53,7 @@
                                 v-for="card in cards"
                                 v-key="card.id"
                                 classItem="best__item"
-                                :text="card.text"
-                                :price="card.price"
-                                :img="card.img"
+                                :card="card"
                             />
                         </div>
                     </div>
@@ -70,29 +68,10 @@ import CardComponent from '@/components/CardComponent.vue'
 import HeaderTitleComponent from '@/components/HeaderTitleComponent.vue'
 export default {
     components: {NavBarComponent, CardComponent, HeaderTitleComponent},
-    data() {
-        return {
-            cards: [
-                {
-                    id: 0,
-                    img: 'coffee-1.jpg',
-                    text: 'Solimo Coffee Beans 1kg',
-                    price: '11.73$',
-                },
-                {
-                    id: 1,
-                    img: 'coffee-2.jpg',
-                    text: 'Solimo Coffee Beans 2kg',
-                    price: '12.73$',
-                },
-                {
-                    id: 2,
-                    img: 'coffee-3.jpg',
-                    text: 'Solimo Coffee Beans 3kg',
-                    price: '13.73$',
-                },
-            ]
-        }
-    }
+    computed: {
+        cards(){
+            return this.$store.getters["getHeroCards"];
+        },
+    },
 }
 </script>
