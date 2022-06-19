@@ -15,12 +15,14 @@
                         <img class="beanslogo" src="@/assets/logo/Beans_logo.svg" alt="Beans logo">
                         <div class="preview__subtitle">We makes every day full of energy and taste</div>
                         <div class="preview__subtitle">Want to try our beans?</div>
-                        <a href="./coffeepage.html" class="preview__btn">More</a>
+                        <a @click.prevent="smoothScroll" 
+                        href="./coffeepage.html" 
+                        class="preview__btn">More</a>
                     </div>
                 </div>
             </div>
         </div>
-        <section class="about">
+        <section class="about" id="about" ref="about">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3">
@@ -43,7 +45,7 @@
                 </div>
             </div>
         </section>
-        <section class="best">
+        <section class="best" ref="best">
             <div class="container">
                 <div class="title">Our best</div>
                 <div class="row">
@@ -66,12 +68,47 @@
 import NavBarComponent from '@/components/NavBarComponent.vue'
 import CardComponent from '@/components/CardComponent.vue'
 import HeaderTitleComponent from '@/components/HeaderTitleComponent.vue'
+import { scrollIntoView } from 'seamless-scroll-polyfill'
 export default {
     components: {NavBarComponent, CardComponent, HeaderTitleComponent},
+<<<<<<< HEAD
     computed: {
         cards(){
             return this.$store.getters["getHeroCards"];
         },
     },
 }
+=======
+    data() {
+        return {
+            cards: [
+                {
+                    id: 0,
+                    img: 'coffee-1.jpg',
+                    text: 'Solimo Coffee Beans 1kg',
+                    price: '11.73$',
+                },
+                {
+                    id: 1,
+                    img: 'coffee-2.jpg',
+                    text: 'Solimo Coffee Beans 2kg',
+                    price: '12.73$',
+                },
+                {
+                    id: 2,
+                    img: 'coffee-3.jpg',
+                    text: 'Solimo Coffee Beans 3kg',
+                    price: '13.73$',
+                },
+            ]
+        };
+    },
+    methods: {
+        smoothScroll() {
+            scrollIntoView(this.$refs.best, { behavior: "smooth", block: "center", inline: "center" });
+        },
+    },
+
+};
+>>>>>>> 347fb2f764034434dbc696ffa37a5bdb8633425e
 </script>
